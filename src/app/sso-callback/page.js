@@ -2,7 +2,7 @@
 
 import { useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useAuth } from "@clerk/nextjs";
+import { useAuth, ClerkProvider } from "@clerk/nextjs";
 
 function SSOCallbackContent() {
   const router = useRouter();
@@ -42,12 +42,14 @@ function SSOCallbackContent() {
 
 export default function SSOCallback() {
   return (
-    <Suspense fallback={
-      <div className="flex min-h-screen flex-col items-center justify-center bg-gray-50">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-indigo-500"></div>
-      </div>
-    }>
-      <SSOCallbackContent />
-    </Suspense>
+    <ClerkProvider>
+      <Suspense fallback={
+        <div className="flex min-h-screen flex-col items-center justify-center bg-gray-50">
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-indigo-500"></div>
+        </div>
+      }>
+        <SSOCallbackContent />
+      </Suspense>
+    </ClerkProvider>
   );
 }
