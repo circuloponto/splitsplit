@@ -37,6 +37,10 @@ export default function DebugPage() {
     <div className="p-8 max-w-4xl mx-auto">
       <h1 className="text-2xl font-bold mb-4">Debugging Clerk-Convex Integration</h1>
       
+      <p className="text-gray-600">
+        This page is for debugging purposes. You can see your authentication state and other information here.
+      </p>
+      
       {error ? (
         <div className="bg-red-50 p-4 rounded-md mb-6 border border-red-200">
           <h2 className="text-lg font-semibold text-red-700">Error</h2>

@@ -29,8 +29,8 @@ export default function SSOCallback() {
         <h2 className="mt-6 text-3xl font-extrabold text-gray-900">
           Completing your sign-in...
         </h2>
-        <p className="mt-2 text-sm text-gray-600">
-          You'll be redirected automatically in a moment.
+        <p className="text-gray-600">
+          You&apos;ve been successfully signed in with SSO.
         </p>
         <div className="mt-8 flex justify-center">
           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-indigo-500"></div>

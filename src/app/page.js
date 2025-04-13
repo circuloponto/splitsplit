@@ -214,38 +214,56 @@ export default function Home() {
           <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
             <div className="flex flex-col bg-white p-6 shadow-lg ring-1 ring-gray-200 rounded-lg">
               <div className="flex items-center gap-x-4">
-                <img src="https://i.pravatar.cc/150?img=11" alt="" className="h-12 w-12 rounded-full" />
+                <Image 
+                  src="https://i.pravatar.cc/150?img=11" 
+                  alt="Sarah Johnson" 
+                  width={48}
+                  height={48}
+                  className="rounded-full"
+                />
                 <div>
                   <p className="text-sm font-semibold leading-6 text-gray-900">Sarah Johnson</p>
                   <p className="text-sm leading-6 text-gray-500">Roommate</p>
                 </div>
               </div>
               <p className="mt-4 text-gray-700">
-                "SplitSplit has made managing apartment expenses with my roommates so much easier. No more awkward money conversations!"
+                &ldquo;SplitSplit has made managing apartment expenses with my roommates so much easier. No more awkward money conversations!&rdquo;
               </p>
             </div>
             <div className="flex flex-col bg-white p-6 shadow-lg ring-1 ring-gray-200 rounded-lg">
               <div className="flex items-center gap-x-4">
-                <img src="https://i.pravatar.cc/150?img=12" alt="" className="h-12 w-12 rounded-full" />
+                <Image 
+                  src="https://i.pravatar.cc/150?img=12" 
+                  alt="Michael Chen" 
+                  width={48}
+                  height={48}
+                  className="rounded-full"
+                />
                 <div>
                   <p className="text-sm font-semibold leading-6 text-gray-900">Michael Chen</p>
                   <p className="text-sm leading-6 text-gray-500">Frequent Traveler</p>
                 </div>
               </div>
               <p className="mt-4 text-gray-700">
-                "I used SplitSplit on my last group vacation and it was a game-changer. We could all see expenses in real-time and settling up was a breeze."
+                &ldquo;I used SplitSplit on my last group vacation and it was a game-changer. We could all see expenses in real-time and settling up was a breeze.&rdquo;
               </p>
             </div>
             <div className="flex flex-col bg-white p-6 shadow-lg ring-1 ring-gray-200 rounded-lg">
               <div className="flex items-center gap-x-4">
-                <img src="https://i.pravatar.cc/150?img=13" alt="" className="h-12 w-12 rounded-full" />
+                <Image 
+                  src="https://i.pravatar.cc/150?img=13" 
+                  alt="Emma Rodriguez" 
+                  width={48}
+                  height={48}
+                  className="rounded-full"
+                />
                 <div>
                   <p className="text-sm font-semibold leading-6 text-gray-900">Emma Rodriguez</p>
                   <p className="text-sm leading-6 text-gray-500">Event Planner</p>
                 </div>
               </div>
               <p className="mt-4 text-gray-700">
-                "Planning group events is part of my job, and SplitSplit has become my go-to tool for managing shared expenses. The debt simplification feature is brilliant!"
+                &ldquo;Planning group events is part of my job, and SplitSplit has become my go-to tool for managing shared expenses. The debt simplification feature is brilliant!&rdquo;
               </p>
             </div>
           </div>

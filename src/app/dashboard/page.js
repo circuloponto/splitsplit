@@ -51,7 +51,7 @@ export default function Dashboard() {
       // by updating a state variable that's used in the component
       setSelectedGroupId(prev => prev);
     }
-  }, [user, isLoading]);
+  }, [user, isLoading, setSelectedGroupId]);
 
   if (isLoading) {
     console.log("Dashboard is loading");
