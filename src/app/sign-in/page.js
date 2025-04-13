@@ -33,6 +33,14 @@ export default function SignIn() {
       console.log("Calling login function...");
       await login(email, password);
       console.log("Login function completed, waiting for auth state update...");
+      
+      // Set a timeout to reset loading state if auth state doesn't update
+      const authTimeout = setTimeout(() => {
+        console.log("Auth state update timeout - resetting loading state");
+        setIsLoading(false);
+      }, 10000); // 10 seconds timeout
+      
+      return () => clearTimeout(authTimeout);
     } catch (error) {
       console.error("Sign in error:", error);
       setError(error.message || "Failed to sign in");

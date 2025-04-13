@@ -71,6 +71,13 @@ export function AuthProvider({ children }) {
       return () => clearTimeout(timer);
     }
     
+    // If we have a session token but session is undefined (not null), this is a loading state
+    if (sessionToken && session === undefined) {
+      console.log("Session is undefined, waiting for validation to complete");
+      // Keep isLoading true while we wait for the session to be validated
+      setIsLoading(true);
+    }
+    
     // If we don't have a session token, ensure user is null
     if (!sessionToken) {
       console.log("No session token, ensuring user is null");
