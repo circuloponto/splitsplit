@@ -37,6 +37,16 @@ export default function SignIn() {
     }
   };
 
+  // Reset loading state if authentication fails
+  useEffect(() => {
+    if (!isAuthenticated && isLoading) {
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 5000); // Reset after 5 seconds if auth state hasn't changed
+      return () => clearTimeout(timer);
+    }
+  }, [isAuthenticated, isLoading]);
+
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-gray-50 py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
