@@ -125,7 +125,7 @@ export default function Dashboard() {
                 </div>
               ) : userGroups.length === 0 ? (
                 <div>
-                  <p className="mb-4 text-gray-600">You don't have any groups yet.</p>
+                  <p className="mb-4 text-gray-600">You don&apos;t have any groups yet.</p>
                   <button
                     onClick={() => setSelectedGroupId('new')}
                     className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-500 transition-colors"
