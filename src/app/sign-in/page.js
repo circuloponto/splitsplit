@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useAuth } from "../lib/auth-context";
@@ -11,7 +11,14 @@ export default function SignIn() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
-  const { login } = useAuth();
+  const { login, isAuthenticated } = useAuth();
+
+  // Watch for authentication state changes
+  useEffect(() => {
+    if (isAuthenticated) {
+      router.push("/dashboard");
+    }
+  }, [isAuthenticated, router]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,12 +29,10 @@ export default function SignIn() {
     try {
       console.log("Calling login function...");
       await login(email, password);
-      console.log("Login successful, redirecting...");
-      router.push("/dashboard");
+      console.log("Login successful, waiting for auth state update...");
     } catch (error) {
       console.error("Sign in error:", error);
       setError(error.message || "Failed to sign in");
-    } finally {
       setIsLoading(false);
     }
   };
