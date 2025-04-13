@@ -15,7 +15,10 @@ export default function SignIn() {
 
   // Watch for authentication state changes
   useEffect(() => {
+    console.log("Auth state changed:", { isAuthenticated, isLoading });
     if (isAuthenticated) {
+      console.log("User is authenticated, redirecting to dashboard...");
+      setIsLoading(false);
       router.push("/dashboard");
     }
   }, [isAuthenticated, router]);
@@ -24,26 +27,33 @@ export default function SignIn() {
     e.preventDefault();
     setError("");
     setIsLoading(true);
-    console.log("Attempting to sign in with:", { email });
+    console.log("Starting sign-in process...", { email, isLoading: true });
 
     try {
       console.log("Calling login function...");
       await login(email, password);
-      console.log("Login successful, waiting for auth state update...");
+      console.log("Login function completed, waiting for auth state update...");
     } catch (error) {
       console.error("Sign in error:", error);
       setError(error.message || "Failed to sign in");
       setIsLoading(false);
+      console.log("Loading state reset due to error:", { isLoading: false });
     }
   };
 
   // Reset loading state if authentication fails
   useEffect(() => {
+    console.log("Loading state effect triggered:", { isLoading, isAuthenticated });
     if (!isAuthenticated && isLoading) {
+      console.log("Setting up loading state reset timer...");
       const timer = setTimeout(() => {
+        console.log("Loading state reset timer triggered");
         setIsLoading(false);
       }, 5000); // Reset after 5 seconds if auth state hasn't changed
-      return () => clearTimeout(timer);
+      return () => {
+        console.log("Cleaning up loading state reset timer");
+        clearTimeout(timer);
+      };
     }
   }, [isAuthenticated, isLoading]);
 
