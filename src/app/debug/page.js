@@ -57,7 +57,7 @@ export default function DebugPage() {
             <ol className="list-decimal ml-5 mt-2 space-y-2">
               <li>Copy this issuer URL</li>
               <li>Update your <code className="bg-gray-100 px-1 rounded">convex.config.js</code> file with this exact domain</li>
-              <li>Make sure you have a JWT template named "convex" in your Clerk dashboard</li>
+              <li>Make sure you have a JWT template named &ldquo;convex&rdquo; in your Clerk dashboard</li>
               <li>Restart your Convex server with <code className="bg-gray-100 px-1 rounded">npx convex dev</code></li>
             </ol>
           </div>

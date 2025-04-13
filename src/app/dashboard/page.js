@@ -41,7 +41,7 @@ export default function Dashboard() {
       console.log("Not authenticated, redirecting to sign-in");
       router.push('/sign-in');
     }
-  }, [isLoading, isAuthenticated, router]);
+  }, [isLoading, isAuthenticated, router, user]);
 
   // Force loading state to false if we have a user
   useEffect(() => {
@@ -258,6 +258,9 @@ export default function Dashboard() {
                 </p>
                 <p className="text-gray-600">
                   Select a group from the sidebar or create a new one to get started.
+                </p>
+                <p className="text-gray-600">
+                  You&apos;ve been successfully signed in with SSO.
                 </p>
               </div>
             )}
